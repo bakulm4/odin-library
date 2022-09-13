@@ -1,0 +1,135 @@
+:root {
+    --green:#04AA6D;
+    --dkgrey:rgb(103, 103, 104);
+    --ltgrey:#dcdbdb;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.btn {
+    border: none;
+    background-color: var(--dkgrey);
+    border-radius: 5px;
+    padding:8px 22px;
+    color:white;
+    font-weight:600;
+    font-size:0.8rem;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+  /* Add some hover effects to buttons */
+  .btn:hover, .btn:focus{
+    opacity: 1;
+    outline:none;
+  }
+
+main {
+    height:100vh;
+    display:grid;
+    grid-template-rows: auto 1fr;
+    background-color: rgb(221, 230, 245);
+}
+
+section.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:20px;
+    box-shadow: 0 2px 2px  rgba(0, 0, 0, 0.2);
+    padding: 2rem ;
+    background-color: rgba(255,255,255,0.5);
+}
+
+.btn.new{
+    background-color: rgba(9, 9, 119, 0.8);
+}
+
+section.booklist{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    grid-gap: 20px;
+    grid-auto-rows: minmax(max-content,200px);
+    padding:2rem;
+}
+
+section.booklist article.book{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding:10px 0;
+    background-color: rgba(255,255,255,0.5);
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.3);
+}
+
+.book .btn {
+    width:101px;
+}
+.btn.read{
+    background-color: var(--green);
+}
+.btn.not-read{
+    background-color:rgb(222, 100, 13) ;
+}
+
+  .form-container {
+    position: fixed;
+    top:30%;
+    left:35%;
+    border: 1px solid #f1f1f1;
+    z-index: 9;
+    width: 300px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    display:grid;
+    grid-gap:10px;
+  }
+
+  .form-container .inputs{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+  }
+  .form-container input[type=text], .form-container input[type=number] {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background: var(--ltgrey);
+  }
+  
+  /* When the inputs get focus, do something */
+  .form-container input:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+
+  .form-container #read:focus {
+    outline: revert;
+    font-size:larger;
+  }
+.form-container .btn {
+    background-color: var(--green);
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    width: 100%;
+  }
+
+  .form-container .cancel {
+    background-color: red;
+  }
+  
+  
